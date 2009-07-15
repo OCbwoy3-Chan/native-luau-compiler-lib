@@ -27,7 +27,7 @@ impl CompileOptions {
   }
 }
 
-/// Compiles the given Luau code into bytecode or throws an error
+/// Compiles the given Luau code into bytecode or throws an error.
 #[napi]
 pub fn compile_luau(source: String, options: Option<CompileOptions>) -> Result<Buffer> {
   let opts = options.unwrap_or(CompileOptions {
