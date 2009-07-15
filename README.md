@@ -2,7 +2,7 @@
 
 ![https://github.com/OCbwoy3-Chan/native-luau-compiler-lib/actions](https://github.com/OCbwoy3-Chan/native-luau-compiler-lib/workflows/CI/badge.svg)
 
-> Library for compiling Luau directly from JavaScript code.
+> Library for compiling Luau bytecode directly from JavaScript code!
 
 # Usage
 
