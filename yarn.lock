@@ -623,30 +623,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/package-template@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@napi-rs/package-template@workspace:."
-  dependencies:
-    "@emnapi/core": "npm:^2.0.0-alpha.5"
-    "@emnapi/runtime": "npm:^2.0.0-alpha.5"
-    "@napi-rs/cli": "npm:^3.9.1"
-    "@napi-rs/wasm-runtime": "npm:^1.2.4"
-    "@oxc-node/core": "npm:^0.1.2"
-    "@tybys/wasm-util": "npm:^0.10.4"
-    ava: "npm:^8.0.1"
-    chalk: "npm:^6.0.0"
-    emnapi: "npm:^2.0.0-alpha.5"
-    husky: "npm:^9.1.7"
-    lint-staged: "npm:^17.5.1"
-    npm-run-all2: "npm:^9.0.3"
-    oxfmt: "npm:^0.68.0"
-    oxlint: "npm:^1.83.0"
-    prettier: "npm:^3.9.6"
-    tinybench: "npm:^6.2.0"
-    typescript: "npm:^7.0.2"
-  languageName: unknown
-  linkType: soft
-
 "@napi-rs/tar-android-arm-eabi@npm:1.1.1":
   version: 1.1.1
   resolution: "@napi-rs/tar-android-arm-eabi@npm:1.1.1"
@@ -1013,6 +989,30 @@ __metadata:
   checksum: 10c0/db9de047c3bb9b51f9335a7bb46f4fcfb6829fb628318c12115fbaf7d369bfce71c15b103d1fc3b464812d936220ee9bc1c8f762d032c9f6be9acc99249095b1
   languageName: node
   linkType: hard
+
+"@ocbwoy3/luau-bytecode-compiler@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@ocbwoy3/luau-bytecode-compiler@workspace:."
+  dependencies:
+    "@emnapi/core": "npm:^2.0.0-alpha.5"
+    "@emnapi/runtime": "npm:^2.0.0-alpha.5"
+    "@napi-rs/cli": "npm:^3.9.1"
+    "@napi-rs/wasm-runtime": "npm:^1.2.4"
+    "@oxc-node/core": "npm:^0.1.2"
+    "@tybys/wasm-util": "npm:^0.10.4"
+    ava: "npm:^8.0.1"
+    chalk: "npm:^6.0.0"
+    emnapi: "npm:^2.0.0-alpha.5"
+    husky: "npm:^9.1.7"
+    lint-staged: "npm:^17.5.1"
+    npm-run-all2: "npm:^9.0.3"
+    oxfmt: "npm:^0.68.0"
+    oxlint: "npm:^1.83.0"
+    prettier: "npm:^3.9.6"
+    tinybench: "npm:^6.2.0"
+    typescript: "npm:^7.0.2"
+  languageName: unknown
+  linkType: soft
 
 "@octokit/auth-token@npm:^6.0.0":
   version: 6.0.0

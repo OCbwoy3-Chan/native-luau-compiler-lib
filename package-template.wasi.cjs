@@ -131,14 +131,14 @@ const __wasmDebugFilePath = __nodePath.join(__dirname, 'package-template.wasm32-
 if (__nodeFs.existsSync(__wasmDebugFilePath)) {
   __wasmFilePath = __wasmDebugFilePath
 } else if (!__nodeFs.existsSync(__wasmFilePath)) {
-  const __wasiPackageEntry = require.resolve('@napi-rs/package-template-wasm32-wasi')
+  const __wasiPackageEntry = require.resolve('@ocbwoy3/luau-bytecode-compiler-wasm32-wasi')
   const __packagedWasmFilePath = __nodePath.join(
     __nodePath.dirname(__wasiPackageEntry),
     'package-template.wasm32-wasi.wasm',
   )
   if (!__nodeFs.existsSync(__packagedWasmFilePath)) {
     throw new Error(
-      '@napi-rs/package-template-wasm32-wasi is installed but is missing package-template.wasm32-wasi.wasm.',
+      '@ocbwoy3/luau-bytecode-compiler-wasm32-wasi is installed but is missing package-template.wasm32-wasi.wasm.',
     )
   }
   __wasmFilePath = __packagedWasmFilePath

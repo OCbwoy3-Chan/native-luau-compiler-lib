@@ -1,19 +1,41 @@
 import { Bench } from 'tinybench'
 
-import { plus100 } from '../index.js'
+import { compileLuau, CompileOptions } from '../index.js'
 
-function add(a: number) {
-  return a + 100
-}
+const source = `
+  local function add(a: number, b: number): number
+      return a + b
+  end
+  print(add(10, 20))
+`;
 
 const b = new Bench()
 
-b.add('Native a + 100', () => {
-  plus100(10)
+b.add('O2 compilation', () => {
+  const options: CompileOptions = {
+    optimizationLevel: 2,
+    debugLevel: 0,
+    coverageLevel: 0
+  };
+  compileLuau(source, options);
 })
 
-b.add('JavaScript a + 100', () => {
-  add(10)
+b.add('O0 compilation', () => {
+  const options: CompileOptions = {
+    optimizationLevel: 0,
+    debugLevel: 0,
+    coverageLevel: 0
+  };
+  compileLuau(source, options);
+})
+
+b.add('O0 C2 D compilation', () => {
+  const options: CompileOptions = {
+    optimizationLevel: 0,
+    debugLevel: 1,
+    coverageLevel: 2
+  };
+  compileLuau(source, options);
 })
 
 await b.run()
