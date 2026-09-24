@@ -54,22 +54,16 @@ jobs:
       fail-fast: false
       matrix:
         settings:
-          - host: macos-latest
-            target: x86_64-apple-darwin
-            build: yarn build --target x86_64-apple-darwin
           - host: windows-latest
             build: yarn build --target x86_64-pc-windows-msvc
             target: x86_64-pc-windows-msvc
-          - host: windows-latest
-            build: yarn build --target i686-pc-windows-msvc
-            target: i686-pc-windows-msvc
           - host: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             build: yarn build --target x86_64-unknown-linux-gnu --use-napi-cross
           - host: ubuntu-latest
             target: x86_64-unknown-linux-musl
             build: yarn build --target x86_64-unknown-linux-musl -x
-          - host: macos-latest
+          - host: macos-14
             target: aarch64-apple-darwin
             build: yarn build --target aarch64-apple-darwin
     name: stable - ${{ matrix.settings.target }} - node@24
@@ -162,6 +156,7 @@ jobs:
             freebsd-version
             yarn install
             yarn build
+            yarn test
             rm -rf node_modules
             rm -rf target
             rm -rf .yarn/cache
@@ -182,12 +177,9 @@ jobs:
           - host: windows-latest
             target: x86_64-pc-windows-msvc
             architecture: x64
-          - host: macos-latest
+          - host: macos-14
             target: aarch64-apple-darwin
             architecture: arm64
-          - host: macos-latest
-            target: x86_64-apple-darwin
-            architecture: x64
         node:
           - '22'
           - '24'
@@ -248,7 +240,7 @@ jobs:
           " >> $GITHUB_OUTPUT
       - name: Install dependencies
         run: |
-          yarn config set --json supportedArchitectures.cpu '["current", "arm64", "x64", "arm"]'
+          yarn config set --json supportedArchitectures.cpu '["current", "x64"]'
           yarn config set --json supportedArchitectures.libc '["current", "musl", "gnu"]'
           yarn install
       - name: Download artifacts
